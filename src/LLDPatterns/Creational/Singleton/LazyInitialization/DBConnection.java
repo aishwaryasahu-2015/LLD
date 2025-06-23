@@ -2,7 +2,7 @@ package LLDPatterns.Creational.Singleton.LazyInitialization;
 
 public class DBConnection {
     //Initialize the instance when needed instead of when the application is fired up
-    public static DBConnection connObject;
+    private static DBConnection connObject;
 
     private DBConnection(){
         System.out.println("DBConnection Initialized");
