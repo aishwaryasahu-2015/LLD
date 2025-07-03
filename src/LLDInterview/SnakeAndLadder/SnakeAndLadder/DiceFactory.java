@@ -1,4 +1,4 @@
-package LLDInterview.GameberryLab.SnakeAndLadder;
+package LLDInterview.SnakeAndLadder.SnakeAndLadder;
 
 public class DiceFactory {
     DiceType diceType;

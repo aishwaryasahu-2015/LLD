@@ -1,4 +1,4 @@
-package LLDInterview.GameberryLab.SnakeAndLadder;
+package LLDInterview.SnakeAndLadder.SnakeAndLadder;
 
 import lombok.Getter;
 import lombok.Setter;

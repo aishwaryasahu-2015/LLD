@@ -1,4 +1,4 @@
-package LLDInterview.GameberryLab.SnakeAndLadder;
+package LLDInterview.SnakeAndLadder.SnakeAndLadder;
 
 public enum GameStatus {
     ACTIVE,

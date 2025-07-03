@@ -1,4 +1,4 @@
-package LLDInterview.GameberryLab.SnakeAndLadder;
+package LLDInterview.SnakeAndLadder.SnakeAndLadder;
 
 public class Player {
     int id;

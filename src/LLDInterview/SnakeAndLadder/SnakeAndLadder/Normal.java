@@ -1,7 +1,6 @@
-package LLDInterview.GameberryLab.SnakeAndLadder;
+package LLDInterview.SnakeAndLadder.SnakeAndLadder;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 public class Normal extends Dice{
