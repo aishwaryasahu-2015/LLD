@@ -8,7 +8,7 @@ public class TaskManagement {
     int tasksTillNow;
     List<User> users;
 
-    public static void main(String args[]){
+    public static void main(String args[]) {
         TaskManagement taskManagement = new TaskManagement();
         taskManagement.initialize();
 
@@ -30,28 +30,28 @@ public class TaskManagement {
         taskManagement.deleteTask(4);
     }
 
-    public void createUsers(){
+    public void createUsers() {
         User user = new User();
         users.add(user);
     }
 
-    public void initialize(){
+    public void initialize() {
         this.tasksTillNow = 0;
         this.taskMap = new HashMap<>();
         this.taskHeap = new PriorityQueue<>((a, b) -> b.priority - a.priority);
     }
 
-    public void createTask(int priority, User user){
+    public void createTask(int priority, User user) {
         System.out.println("Create the");
-        int taskId = tasksTillNow+1;
+        int taskId = tasksTillNow + 1;
         Task newTask = new Task(priority, taskId, user);
         taskMap.put(taskId, newTask);
         taskHeap.add(newTask);
     }
 
-    public void updateTask(int taskId, int priority){
+    public void updateTask(int taskId, int priority) {
         Task task = taskMap.getOrDefault(taskId, null);
-        if(task == null){
+        if (task == null) {
             System.out.println("Task with taskId: " + taskId + " doesn't exists");
             return;
         }
@@ -60,9 +60,9 @@ public class TaskManagement {
 
 
         List<Task> tasks = new ArrayList<>();
-        while(!taskHeap.isEmpty()){
+        while (!taskHeap.isEmpty()) {
             Task curTask = taskHeap.poll();
-            if(curTask.taskId == taskId){
+            if (curTask.taskId == taskId) {
                 curTask.priority = priority;
                 tasks.add(curTask);
                 break;
@@ -73,9 +73,9 @@ public class TaskManagement {
         taskHeap.addAll(tasks);
     }
 
-    public void deleteTask(int taskId){
+    public void deleteTask(int taskId) {
         Task task = taskMap.getOrDefault(taskId, null);
-        if(task == null){
+        if (task == null) {
             System.out.println("Task with taskId: " + taskId + " doesn't exists");
             return;
         }
@@ -83,9 +83,9 @@ public class TaskManagement {
         taskMap.remove(taskId);
 
         List<Task> tasks = new ArrayList<>();
-        while(!taskHeap.isEmpty()){
+        while (!taskHeap.isEmpty()) {
             Task curTask = taskHeap.poll();
-            if(curTask.taskId == taskId){
+            if (curTask.taskId == taskId) {
                 break;
             }
             tasks.add(curTask);
@@ -94,9 +94,9 @@ public class TaskManagement {
         taskHeap.addAll(tasks);
     }
 
-    public void executeTask(){
+    public void executeTask() {
         System.out.println("Executing the task with highest priority:");
-        if(taskHeap.isEmpty()){
+        if (taskHeap.isEmpty()) {
             System.out.println("No Task to execute");
             return;
         }
