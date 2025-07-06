@@ -1,0 +1,9 @@
+Uses Bridge pattern:
+There are two things:
+1. Type of Message -> Abstract class
+    a. Text
+    b. QR
+2. Ways to send message -> Implementor class
+    a. SMS
+    b. E-mail
+    c. Whats-app message
