@@ -1,0 +1,15 @@
+Requirements
+1. User have provided the source and destination find the cab, assign it to the user and complete the ride
+
+Driver matching
+Pricing
+
+Rider Manager <- Rider
+Driver Manager <- Driver
+
+Driver Matching strategy
+    Least Time taken DM strategy
+
+Pricing Strategy
+    Rating Based
+    Default pricing

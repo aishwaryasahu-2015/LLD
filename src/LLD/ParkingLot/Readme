@@ -1,0 +1,35 @@
+Requirements:
+Happy Flow:
+1. Vehicle came -> check spot availability and assign the floor and spot: -> choose the nearest one -> capture the time
+2. At the time of leaving check the time take difference -> ceil -> first hour -> x rs, >1 yrs
+3. Parking history
+
+Actors:
+ParkingLotManagement System -> CRUD for Floor
+Floor
+    Entry
+    Exit
+    Vehicle spots -> 2 whheler, 4 wheeler -> crud operation
+Vehicle -> Make it inteface -> extensible for more vehicle type
+VehicleHistory
+Ticket -> InTime and outTime
+Payment
+
+
+ParkingLot will check take the vehicle type:
+List of floor each floor will have map of available vehicle based on type
+List of 2 wheeler
+List of 4 wheelers
+Entry and Exit
+checks availability for that category and creates vehicle object based on that
+
+ParkingLot has ->
+    List of floors
+        Floor has -> Spots, list of available spots
+    Vehicle -> Ticket -> spots
+    VehicleHistory -> can query based on vehicle
+
+
+
+
+
