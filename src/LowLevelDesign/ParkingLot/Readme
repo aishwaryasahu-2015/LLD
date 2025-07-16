@@ -1,0 +1,32 @@
+Parking lot->
+Requirements:
+1. Vehicle came -> check spot availability and assign the floor and spot: -> choose the nearest one -> capture the time
+2. At the time of leaving check the time take difference -> ceil -> first hour -> x rs, >1 yrs
+3. Parking history
+
+Entities:
+1. ParkingLot ->  Management System -> singleton
+2. Floors -> has list of parking spots
+3. Parking spots -> can have different types -> two wheeler, 4 wheeler
+4. Vehicle -> different types, calculation logic based on vehicle -> Have factory class for this
+5. Tickets ->
+6. Invoice ->
+7. User ->
+
+Define relations ->
+ParkingLot ->
+    ParkingLot Management System ->
+        List of Floors ->
+            Spots -> two wheeler and 4 wheeler
+                Vehicle
+User ->
+    Vehicle
+
+Ticket ->
+    Spots ->
+        Vehicle
+    Invoice
+
+Parking History ->
+    List of Tickets ->
+

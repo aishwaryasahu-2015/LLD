@@ -4,6 +4,8 @@ import LLD.ParkingLot.Enums.VehicleType;
 
 import java.time.Duration;
 import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.*;
 
 public class ParkingLotController {
@@ -63,7 +65,9 @@ public class ParkingLotController {
             if(vehicleHistory.containsKey(vehicleNumebr)){
                 vehicleHistory.get(vehicleNumebr).add(ticket);
             }else{
-                vehicleHistory.put(vehicleNumebr,new ArrayList<>((Collection) ticket));
+                List<Ticket> tickets = new ArrayList<>();
+                tickets.add(ticket);
+                vehicleHistory.put(vehicleNumebr,tickets);
             }
             vehicleMap.put(vehicleNumebr, vehicle);
         }
@@ -95,7 +99,10 @@ public class ParkingLotController {
 
     public void generateInvoice(Vehicle vehicle){
         Ticket ticket = vehicle.ticket;
-        ticket.outTime = new Date();
+        //adding the 4hr delay
+        LocalDateTime nowPlus4Hours = LocalDateTime.now().plusHours(4);
+        ticket.outTime = Date.from(nowPlus4Hours.atZone(ZoneId.systemDefault()).toInstant());
+        //new Date();
         double price = vehicle.calculatePrice(getHr(ticket.inTime, ticket.outTime));
         System.out.println("Ticket price is: " + price);
     }

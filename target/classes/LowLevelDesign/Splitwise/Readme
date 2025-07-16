@@ -1,0 +1,21 @@
+Requirements: Capability
+1. Add People
+2. Add/Manage group
+3. Add/Manager people in the group
+4. Manage Expense
+5. Split Expense
+    a. Equal split
+    b. unequal split (mention amount for each)
+    c. % split
+    d. split by share
+6. Paid by whom
+7. Balance Sheet for each
+
+Objects and Class Identification:
+1. Splitwise app -> driver object
+2. User
+3. Expense
+4. Participants
+5. Group
+6. Balance Sheet
+7. Split ??
