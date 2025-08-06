@@ -1,0 +1,88 @@
+Requirements:
+1. Select city -> see movies available -> select movie -> see List of theaters and screen in each theater,
+-> choose a show -> select count of seats -> pay -> mark the city occupied and get the tickets
+2. User should be able to see booking history
+3. Admin -> add/update/delete movies, theaters, screens,
+4. Admin -> add shows with specific start and end time, movies, language, screen, genre
+5. User can search movies based on language, genre, and location
+6. User can see available shows and seats
+7. user can register and login
+8. should suport concurrent booking - proper locking mechanisms
+
+----------------------------------------------------------
+Classes:
+User -> Admin, Customer
+
+Movie
+Show
+Screen
+Theater
+Location -> city
+Language Enum
+Genre Enum
+Seat
+Ticket
+Invoice
+
+BookMyShow Application ->
+    AdminPortal -> Admin
+    Map -> CityName -> City
+    Map -> Language -> List of Movies
+    Map -> Genre -> List of Movies
+    Map -> Users -> List of Shows
+
+Movies -> Name, Id, Language, Genre,
+
+City -> EnumName, Id, List of Movies, Map -> (MovieName -> List<Theater>)
+
+Theater -> EnumName, Address, cityName Id, List of Screens, List of shows-> added in start time order
+    Movies->shows map, Map -> screenid -> List of pair of shows start and endTime
+
+Screen -> ScreenId, List<seats>
+
+Show -> Start Time, end Time, Movie, TheaterId, ScreenId, Screen, pricePerSeat
+
+seats -> No, occupied status
+
+Language Enum
+
+Genre Enum
+
+Invoice -> Total Amount, per unit movie amount
+
+Ticket -> Show, List of seats booked, Total Amount
+-----------------------------------------------
+Admin -> create city, theater, screens, seats,
+Admin -> create movies -> manage which movie will present in which city(add movie in list of movie in a city)
+Admin -> create shows -> provide movie name , start-end time, Theater, screenId, pricePerSeat -> add it to city -in map ->
+
+----------------------------
+User -> 1. gave city -> List of Movie available agains that city
+User -> 2. chooses movie -> List of shows -> map-> will get shows from each theater
+User -> 3. choose a show -> fetch list of seats available along with price
+User -> 4. chooses seats -> acquire lock here -> book seats -> calculate the total amount -> generate the invoice -> make status of payment as pending
+-> mark status as done -> create ticket -> return ticket add in the user history
+
+User -> 1. city -> List of Movies available against that city
+User -> 2. give language -> return list of movies with given language
+Rest same from 2 ->4 from previous
+
+User -> 1. city -> List of Movies available against that city
+User -> 2. give genre -> return list of movies with given genre
+Rest same from 2 ->4 from previous
+--------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -5,9 +5,15 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Getter
-@Setter
 public class User {
-    String id;
-    String name;
+    String userId;
+    String userName;
     UserExpenseBalanceSheet userExpenseBalanceSheet;
+
+    public User(String id, String userName){
+        this.userId = id;
+        this.userName = userName;
+        userExpenseBalanceSheet = new UserExpenseBalanceSheet();
+    }
+
 }

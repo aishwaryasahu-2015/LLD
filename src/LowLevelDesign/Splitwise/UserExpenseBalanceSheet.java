@@ -1,6 +1,5 @@
 package LowLevelDesign.Splitwise;
 
-import LowLevelDesign.Splitwise.User.User;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,6 +10,8 @@ import java.util.Map;
 @Setter
 public class UserExpenseBalanceSheet {
     Map<String,Balance> userVsBalance;
+
+
     double totalExpense;
     double totalPayment;
     double totalOwe;

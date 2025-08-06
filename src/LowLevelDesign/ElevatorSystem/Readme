@@ -1,0 +1,29 @@
+Requirements:
+1. Support multiple elevators
+2. outside box -> up down request
+3. inside elevator -> destination
+4. should show current status -> floor where it is, door status-> open closed
+5. Other features -> emergency stop, overload detection, maintenance mode, alert bell
+
+Entities:
+1. ElevatorManagement System
+2. Elevator ->
+3. Buttons -> floor buttons, special ones -> (emergency stop, overload detection, maintenance mode, alert bell)
+4. Floor -> Direction buttons
+5. Button Factory
+6. Display
+
+ElevatorManagementSystem
+    List<Elevator> elevators;
+    List<Floor> floors;
+
+Elevator -> floorNo: number
+            door status: open/close
+            display
+            List<Buttons> /map of buttons
+
+Floor ->  boolean upRequest
+          boolean downRequest
+
+
+
