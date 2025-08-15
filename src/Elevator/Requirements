@@ -1,0 +1,35 @@
+ 1-> has 4 -> 2nd floor
+ ------
+1-> 2->4 -> in 2 steps -> 1->4
+2 -> 0 -> 5 in 5 steps -> 2->5 ->
+3 -> 2  -> 2 steps
+--------
+1->4
+2->6
+3->2
+
+1 -> []
+2 -> []
+3 -> []
+
+3
+req 1 -> 1 [4
+2 2[5
+3 3[2
+4 1[4,
+5
+6
+7
+8
+
+Entities->
+ElevationSystem ->
+    1. step -> move all the elevator
+    2. decide which elevator will take the request ->
+Elevator -> queue [], floor no.
+Status -> elevator -> Moving, Idle
+Direction -> UP, DOWN IDLE
+
+
+
+

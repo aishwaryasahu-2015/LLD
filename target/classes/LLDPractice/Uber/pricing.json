@@ -1,0 +1,15 @@
+{
+  "ECONOMY": {
+    "baseFare": 10,
+    "perKmPrice": 20
+  },
+  "PREMIUM": {
+    "baseFare": 20,
+    "perKmPrice": 30
+  },
+  "XL": {
+    "baseFare": 30,
+    "perKmPrice": 40
+  }
+
+}

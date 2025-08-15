@@ -1,0 +1,52 @@
+1. Pickup to drop request
+2. drive accept ride if available
+3. ride-> estimated time,fair,status ->REQUESTED,ONGOING,COMPLETED, CANCELLED
+4. Support Multiple ride types: Economy, Premium, XL
+5. Driver can have one active ride at a time
+6. payment -> CASH, ONLINE
+7. Ride rating -> driver will get rating
+
+Entities ->
+Uber ->
+User -> Driver and Rider -> provide rating ->
+Driver -> location
+Ride
+Ride status -> REQUESTED,ONGOING,COMPLETED, CANCELLED -> enum
+Vehicle type -> Enum Economy, Premium, XL
+Payment Type -> CASH, ONLINE
+Payment -> Abstract class -> complete payment will -> work based on this
+Ride rating -> driver and rider
+Location -> log,lat
+Fair -> start , end location
+
+
+Uber
+map -> rider ->id -> user
+map -> vehicleType -> arrayOfDrivers
+map -> driverId -> driver
+Ride -> riderid, driverid, start, end, vehicleType, status, provide rating -> ride object, rating
+
+Ride management ->
+1. create ride, -> rider, type of vehicle, status -> requested, start and end location, getFair, getTime,
+2. estimated fair ->  type -> dis
+3. total distance -> start and end
+4. estimate time -> dist , type
+5. Find the driver -> ride
+6. Start The ride
+7. complete the ride
+8. initiate payment
+9. provide rating -> UserType, rating, id
+
+Driver Management ->
+map -> vehicleType -> listOfDriver
+find driver -> start, end, vehicle Type -> return the first nearest driver -> driver
+
+Config -> Map-> rideType -> price array -> 1st km and subsequent
+Rider -> RideList
+
+--------------------------
+
+
+
+
+
